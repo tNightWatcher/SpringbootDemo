@@ -27,7 +27,7 @@ $(document).ready(function() {
             success: function (data) {
                 alert("数据提交成功");
                 console.log("success");
-                console.log(data)
+                console.log(data);
             },
             error: function (e) {
                 console.log(e)
