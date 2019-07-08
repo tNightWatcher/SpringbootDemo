@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.Date;
+import java.util.List;
 
 @Controller
 public class UserController {
@@ -27,5 +28,12 @@ public class UserController {
             System.out.println(user.toString());
 
             return "index";
+    }
+
+    @RequestMapping(value="/userController/getUserList",method = RequestMethod.POST)
+    @ResponseBody
+    public List<User> getUserList(){
+        System.out.println(userDao.getUserList().get(1));
+        return userDao.getUserList();
     }
 }

@@ -25,4 +25,9 @@ public class MainController {
 
         return "/user/insertUserInfo";
     }
+    @RequestMapping(value = "/userList", method = RequestMethod.GET)
+    public String test4(){
+
+        return "/user/userList";
+    }
 }

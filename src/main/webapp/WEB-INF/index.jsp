@@ -13,6 +13,6 @@
 <body>
     <h1>起始页</h1>
     <a href="../main/insertUserInfo" target="_blank">插入用户</a>
-    <a href="www.baidu.com" target="_blank">插入用户</a>
+    <a href="../main/userList" target="_blank">用户列表</a>
 </body>
 </html>

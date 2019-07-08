@@ -10,7 +10,7 @@ import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.data.mongodb.core.query.Update;
 import org.springframework.stereotype.Component;
 
-import java.util.Date;
+import java.util.List;
 
 @Component
 public class UserDaoImp implements UserDao {
@@ -49,7 +49,10 @@ public class UserDaoImp implements UserDao {
             return 0;
     }
 
-
+    @Override
+    public List<User> getUserList(){
+        return mongoTemplate.findAll(User.class);
+    }
 
 
 }
