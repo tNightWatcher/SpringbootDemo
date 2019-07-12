@@ -1,6 +1,6 @@
 package com.example.demo;
 
-import com.example.demo.DaoImp.UserDaoImp;
+import com.example.demo.daoimp.UserDaoImp;
 import com.example.demo.entity.User;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;

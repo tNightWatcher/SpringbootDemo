@@ -1,6 +1,6 @@
-package com.example.demo.DaoImp;
+package com.example.demo.daoimp;
 
-import com.example.demo.Dao.UserDao;
+import com.example.demo.dao.UserDao;
 import com.example.demo.entity.User;
 import com.mongodb.client.result.UpdateResult;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,7 +24,8 @@ public class UserDaoImp implements UserDao {
 
     @Override
     public void removeUser(Long id) {
-        Query query = new Query(Criteria.where("id").is(id));//查找其id字段的值与传入参数id相等的数据
+        //查找其id字段的值与传入参数id相等的数据
+        Query query = new Query(Criteria.where("id").is(id));
         mongoTemplate.remove(query,User.class);
     }
 
@@ -42,11 +43,12 @@ public class UserDaoImp implements UserDao {
         //更新查询返回的结果集的第一条数据
         UpdateResult result = mongoTemplate.updateFirst(query,update,User.class);
         //更新查询到的所有结果集
-        //UpdateResult all_result = mongoTemplate.updateMulti(query,update,User.class);
-        if(result!= null)
+        if(result!= null) {
             return (int) result.getModifiedCount();
-        else
+        }
+        else {
             return 0;
+        }
     }
 
     @Override

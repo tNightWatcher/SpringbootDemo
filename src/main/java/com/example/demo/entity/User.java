@@ -7,6 +7,15 @@ import org.springframework.data.mongodb.core.mapping.Field;
 
 import java.util.Date;
 
+
+/**
+ * description:用户实体类
+ *
+ * @package:com.example.demo.entity
+ * @author:HP
+ * @date:2019/7/8
+ * @time:14:41
+ */
 @Document(collection = "user_info")
 public class User {
     @Id
