@@ -25,5 +25,5 @@
 <script type="text/javascript" src="/static/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="/static/bootstrap-table-master/dist/bootstrap-table.js"></script>
 <script type="text/javascript" src="/static/bootstrap-table-master/dist/locale/bootstrap-table-zh-CN.js"></script>
-<script type="text/javascript" src="/static/js/userList.js"></script>
+<script type="text/javascript" src="/static/js/task/taskList.js"></script>
 </html>

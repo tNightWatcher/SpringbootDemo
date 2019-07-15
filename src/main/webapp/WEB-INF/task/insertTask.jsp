@@ -21,7 +21,7 @@
                     <h2>录入用户</h2>
                 </div>
                 <%--jijian/--%>
-                <form id="zfryForm" method="post" class="form-horizontal" action="UserController/insertUserInfo">
+                <form id="insertTaskForm" method="post" class="form-horizontal" action="UserController/insertUserInfo">
                     <div class="form-group">
                         <label class="col-lg-4 control-label">账号<font color="red">*</font></label>
                         <div class="col-lg-4">
@@ -90,5 +90,5 @@
 <script type="text/javascript" src="/static/jquery-3.4.1/jquery-3.4.1.min.js"></script>
 <script type="text/javascript" src="/static/bootstrap-3.3.7-dist/js/bootstrap.js"></script>
 <script type="text/javascript" src="/static/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="/static/js/insertUserInfo.js"></script>
+<script type="text/javascript" src="/static/js/task/insertTask.js"></script>
 </html>

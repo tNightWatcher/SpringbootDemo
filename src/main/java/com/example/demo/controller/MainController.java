@@ -30,4 +30,14 @@ public class MainController {
 
         return "/user/userList";
     }
+    @RequestMapping(value = "/insertTask", method = RequestMethod.GET)
+    public String test5(){
+
+        return "/task/insertTask";
+    }
+    @RequestMapping(value = "/userList", method = RequestMethod.GET)
+    public String test6(){
+
+        return "/task/taskList";
+    }
 }
