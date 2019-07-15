@@ -11,6 +11,11 @@
     <title>起始页</title>
 </head>
 <body>
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <div>导航栏</div>
+        </div>
+    </nav>
     <h1>起始页</h1>
     <a href="../main/insertUserInfo" target="_blank">插入用户</a><br/>
     <a href="../main/userList" target="_blank">用户列表</a><br/>

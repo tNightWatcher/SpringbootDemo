@@ -8,7 +8,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>插入用户数据</title>
+    <title>创建任务</title>
 </head>
 <body>
 
@@ -32,6 +32,13 @@
                         <label class="col-lg-4 control-label">发布人<font color="red">*</font></label>
                         <div class="col-lg-4">
                             <input type="text" class="form-control" id="publisher" name="publisher" placeholder="发布人" />
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-lg-4 control-label">处理人<font color="red">*</font></label>
+                        <div class="col-lg-4">
+                            <input type="text" class="form-control" id="principle" name="principle" placeholder="发布人" />
                         </div>
                     </div>
 

@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import java.util.List;
+
 /**
  * description:
  *
@@ -30,5 +32,15 @@ public class TaskController {
         System.out.println(task.toString());
 
         return "index";
+    }
+
+    @RequestMapping(value="/taskController/getTaskList",method = RequestMethod.POST)
+    @ResponseBody
+    public List<Task> getUserList(){
+        List<Task> list = taskDao.getTaskList();
+
+        //System.out.println(task.toString());
+
+        return list;
     }
 }

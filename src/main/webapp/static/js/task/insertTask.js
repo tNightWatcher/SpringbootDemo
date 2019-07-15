@@ -34,6 +34,7 @@ $(document).ready(function() {
         var obj={};
         obj.taskName=$("#taskName").val();
         obj.publisher=$("#publisher").val();
+        obj.principle=$("#principle").val();
         obj.publishTime=$("#publishTime").val();
         obj.expectedTime=$("#expectedTime").val();
         obj.taskOverview=$("#taskOverview").val();
