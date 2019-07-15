@@ -11,7 +11,7 @@
     <title>用户列表</title>
 </head>
 <body>
-<table id="userTable" border="1">
+<table id="userTable" border="1" class="table table-striped">
 
 </table>
 </body>

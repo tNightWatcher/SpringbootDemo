@@ -4,6 +4,7 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
 
+import java.io.Serializable;
 import java.util.Date;
 
 /**
@@ -15,27 +16,57 @@ import java.util.Date;
  * @time:14:41
  */
 @Document(collection = "task")
-public class Task {
+public class Task implements Serializable {
     @Id
     private String id;
+    /**
+     * 任务名
+     */
     @Field("task_name")
     private String taskName;
+    /**
+     * 发布人
+     */
     @Field("publisher")
     private String publisher;
+    /**
+     * 处理人
+     */
     @Field("principal")
     private String principle;
+    /**
+     * 发布日期
+     */
     @Field("publish_time")
     private Date publishTime;
+    /**
+     * 要求完成日期
+     */
     @Field("expected_time")
-    private Date expected_Time;
+    private Date expectedTime;
+    /**
+     * 任务概述
+     */
     @Field("task_overview")
     private String taskOverview;
+    /**
+     * 任务详细描述
+     */
     @Field("task_detail")
     private String taskDetail;
+    /**
+     * 完成任务需要知道的相关信息
+     */
     @Field("premise")
     private String premise;
+    /**
+     * 当前进度
+     */
     @Field("schedule")
     private String schedule;
+    /**
+     * 是否完成
+     */
     @Field("accomplishment")
     private String accomplishment;
 
@@ -79,12 +110,12 @@ public class Task {
         this.publishTime = publishTime;
     }
 
-    public Date getExpected_Time() {
-        return expected_Time;
+    public Date getExpectedTime() {
+        return expectedTime;
     }
 
-    public void setExpected_Time(Date expected_Time) {
-        this.expected_Time = expected_Time;
+    public void setExpectedTime(Date expectedTime) {
+        this.expectedTime = expectedTime;
     }
 
     public String getTaskOverview() {

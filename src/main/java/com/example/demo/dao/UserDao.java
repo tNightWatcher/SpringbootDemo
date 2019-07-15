@@ -4,6 +4,9 @@ import com.example.demo.entity.User;
 
 import java.util.List;
 
+/**
+ * @author HP
+ */
 public interface UserDao {
         public void saveUser(User user);
         public void removeUser(Long id);

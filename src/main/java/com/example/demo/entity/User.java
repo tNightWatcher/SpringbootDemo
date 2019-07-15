@@ -5,6 +5,7 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
 
+import java.io.Serializable;
 import java.util.Date;
 
 
@@ -17,7 +18,7 @@ import java.util.Date;
  * @time:14:41
  */
 @Document(collection = "user_info")
-public class User {
+public class User implements Serializable {
     @Id
     private String id;
     @Field("account")

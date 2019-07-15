@@ -1,15 +1,46 @@
 $(document).ready(function() {
 
-    //添加用户信息,点击事件
-    $('#submit_btn').click(function() {
+    //任务发布时间
+    $('#publishTime').datetimepicker({
+        format: 'yyyy-mm-dd',
+        language: 'zh-CN',
+        weekStart: 1,
+        todayBtn: 1,//显示‘今日’按钮
+        autoclose: 1,
+        todayHighlight: 1,
+        startView: 2,
+        minView: 2,
+        clearBtn:true,//清除按钮
+        forceParse: 0
+    });
+    //要求完成时间
+    $('#expectedTime').datetimepicker({
+        format: 'yyyy-mm-dd',
+        language: 'zh-CN',
+        weekStart: 1,
+        todayBtn: 1,//显示‘今日’按钮
+        autoclose: 1,
+        todayHighlight: 1,
+        startView: 2,
+        minView: 2,
+        clearBtn:true,//清除按钮
+        forceParse: 0
+    });
 
-        var myDate = new Date();
+    //添加用户信息,点击事件
+    $('#submit_btn_task').click(function() {
+
+        //var myDate = new Date();
         var obj={};
-        obj.account=$("#account").val();
-        obj.password=$("#password").val();
-        obj.userName=$("#userName").val();
-        obj.age=$("#age").val();
-        obj.sex=$("#sex").val();
+        obj.taskName=$("#taskName").val();
+        obj.publisher=$("#publisher").val();
+        obj.publishTime=$("#publishTime").val();
+        obj.expectedTime=$("#expectedTime").val();
+        obj.taskOverview=$("#taskOverview").val();
+        obj.taskDetail=$("#taskDetail").val();
+        obj.premise=$("#premise").val();
+        obj.schedule=$("#schedule").val();
+        obj.accomplishment=$("#accomplishment").val();
 
         var description = "";
         for(var i in obj){
@@ -20,7 +51,7 @@ $(document).ready(function() {
 
         $.ajax({
             type: "POST",
-            url: "/UserController/insertUserInfo",
+            url: "/TaskController/insertTask",
             dataType: "json",
             data:JSON.stringify(obj),
             contentType : "application/json",
