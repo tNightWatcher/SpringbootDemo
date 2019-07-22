@@ -40,4 +40,19 @@ public class MainController {
 
         return "/task/taskList";
     }
+    @RequestMapping(value = "/index", method = RequestMethod.GET)
+    public String test7(){
+
+        return "index";
+    }
+    @RequestMapping(value = "/2", method = RequestMethod.GET)
+    public String test8(){
+
+        return "2";
+    }
+    @RequestMapping(value = "/1", method = RequestMethod.GET)
+    public String test9(){
+
+        return "1";
+    }
 }
