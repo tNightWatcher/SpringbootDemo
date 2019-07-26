@@ -2,6 +2,7 @@ package com.example.demo.controller;
 
 import com.example.demo.dao.TaskDao;
 import com.example.demo.entity.Task;
+import com.example.demo.service.TaskService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -23,24 +24,20 @@ import java.util.List;
 public class TaskController {
     @Autowired
     TaskDao taskDao;
+    @Autowired
+    TaskService taskService;
 
     @RequestMapping(value="/TaskController/insertTask",method = RequestMethod.POST)
     @ResponseBody
-    public String insertUserInfo(@RequestBody(required=false) Task task){
-        taskDao.saveTask(task);
-
-        System.out.println(task.toString());
-
+    public String insertTaskInfo(@RequestBody(required=false) Task task){
+        taskService.saveTask(task);
         return "index";
     }
 
     @RequestMapping(value="/taskController/getTaskList",method = RequestMethod.POST)
     @ResponseBody
-    public List<Task> getUserList(){
-        List<Task> list = taskDao.getTaskList();
-
-        //System.out.println(task.toString());
-
+    public List<Task> getTaskList(){
+        List<Task> list = taskService.getTaskList();
         return list;
     }
 }

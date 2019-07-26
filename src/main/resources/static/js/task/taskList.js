@@ -31,10 +31,16 @@ $(document).ready(function() {
                     visible: false
                 },{
                     field:"publishTime",
-                    title:"发布日期"
+                    title:"发布日期",
+                    formatter: function (value, row, index) {
+                        return changeDateFormat(value);
+                    }
                 },{
                     field:"expectedTime",
-                    title:"要求完成日期"
+                    title:"要求完成日期",
+                    formatter:function(value,row,index){
+                        return value.format("yyyy-MM-dd hh:mm:ss");
+                    }
                 },{
                     field:"taskOverview",
                     title:"任务概述"
@@ -50,4 +56,16 @@ $(document).ready(function() {
         })
     }
 
+    function changeDateFormat(cellval) {
+        var dateVal = cellval + "";
+        if (cellval != null) {
+            var date = new Date(parseInt(dateVal.replace("/Date(", "").replace(")/", ""), 10));
+            var month = date.getMonth() + 1 < 10 ? "0" + (date.getMonth() + 1) : date.getMonth() + 1;
+            var currentDate = date.getDate() < 10 ? "0" + date.getDate() : date.getDate();
+            var hours = date.getHours() < 10 ? "0" + date.getHours() : date.getHours();
+            var minutes = date.getMinutes() < 10 ? "0" + date.getMinutes() : date.getMinutes();
+            var seconds = date.getSeconds() < 10 ? "0" + date.getSeconds() : date.getSeconds();
+            return date.getFullYear() + "-" + month + "-" + currentDate + " " + hours + ":" + minutes + ":" + seconds;
+        }
+    }
 })

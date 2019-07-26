@@ -9,17 +9,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @RequestMapping("/main")
 public class MainController {
 
-    @RequestMapping(value = "/test", method = RequestMethod.GET)
-    public String test(){
-
-        return "testHello";
-    }
-    @RequestMapping(value = "/test2", method = RequestMethod.GET)
-    public String test2(){
-
-        return "/jsp/testHello";
-    }
-
     @RequestMapping(value = "/insertUserInfo", method = RequestMethod.GET)
     public String test3(){
 
@@ -45,14 +34,5 @@ public class MainController {
 
         return "index";
     }
-    @RequestMapping(value = "/2", method = RequestMethod.GET)
-    public String test8(){
 
-        return "2";
-    }
-    @RequestMapping(value = "/1", method = RequestMethod.GET)
-    public String test9(){
-
-        return "1";
-    }
 }
