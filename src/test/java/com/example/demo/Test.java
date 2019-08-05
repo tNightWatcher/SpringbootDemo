@@ -1,6 +1,8 @@
 package com.example.demo;
 
+import com.example.demo.daoimp.TaskDaoImp;
 import com.example.demo.daoimp.UserDaoImp;
+import com.example.demo.entity.Task;
 import com.example.demo.entity.User;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,6 +18,9 @@ public class Test {
     @Autowired
     private UserDaoImp userDaoImp;
 
+    @Autowired
+    private TaskDaoImp taskDaoImp;
+
     @org.junit.Test
     public void saveUser() {
         User u = new User();
@@ -30,6 +35,28 @@ public class Test {
         u.setLastChangeTime(new Date());
         u.setCreateTime(new Date());
         userDaoImp.saveUser(u);
+        for (int i=0; i < 100 ; i++ ){
+            userDaoImp.saveUser(u);
+        }
+    }
+
+    @org.junit.Test
+    public void saveTask(){
+
+        for (int i=0; i < 10 ; i++ ){
+            Task task = new Task();
+            task.setAccomplishment("2");
+            task.setExpectedTime(new Date());
+            task.setPremise("test2");
+            task.setPrinciple("test2");
+            task.setPublisher("test2");
+            task.setPublishTime(new Date());
+            task.setSchedule("已完成");
+            task.setTaskDetail("context");
+            task.setTaskName("任务2");
+            task.setTaskOverview("这是任务概述");
+            taskDaoImp.saveTask(task);
+        }
     }
 
     @org.junit.Test

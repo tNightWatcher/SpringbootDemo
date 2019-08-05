@@ -38,8 +38,7 @@ $(document).ready(function() {
                 },{
                     field:"taskOverview",
                     title:"任务概述"
-                }
-                ,{
+                },{
                     field:"schedule",
                     title:"当前进度"
                 },{

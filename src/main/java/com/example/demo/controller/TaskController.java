@@ -38,6 +38,7 @@ public class TaskController {
     @ResponseBody
     public List<Task> getTaskList(){
         List<Task> list = taskService.getTaskList();
+        System.out.println(list.get(1).getPublishTime());
         return list;
     }
 }

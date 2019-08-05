@@ -1,15 +1,22 @@
 $(document).ready(function() {
     initUserTable();
 
+
+})
     //参考教程 https://blog.csdn.net/yan88888888888888888/article/details/83651507
 
+    //初始化任务表格
     function initUserTable(){
+        $('#taskTable').bootstrapTable('destroy');
         $('#taskTable').bootstrapTable({
             url:"/taskController/getTaskList",
             method:"post",
             striped:true,
             contentType: "application/json",//请求数据内容格式 默认是 application/json 自己根据格式自行服务端处理
             dataType: "json",//期待返回数据类型
+            pagination:true,//bootstrap分页符底栏
+            search:true,//启用搜索框
+            searchOnEnterKey:true,//按回车键启用搜索方法
             responseHandler:function (res) {
                 return res;
             },
@@ -38,8 +45,8 @@ $(document).ready(function() {
                 },{
                     field:"expectedTime",
                     title:"要求完成日期",
-                    formatter:function(value,row,index){
-                        return value.format("yyyy-MM-dd hh:mm:ss");
+                    formatter: function (value, row, index) {
+                        return changeDateFormat(value);
                     }
                 },{
                     field:"taskOverview",
@@ -58,8 +65,11 @@ $(document).ready(function() {
 
     function changeDateFormat(cellval) {
         var dateVal = cellval + "";
+        console.log("dateVal:"+dateVal);
         if (cellval != null) {
-            var date = new Date(parseInt(dateVal.replace("/Date(", "").replace(")/", ""), 10));
+            var reg=new RegExp(".\\d{3}\\+\\d{4}$");
+            var date = new Date(dateVal.replace(reg, "").replace("T", " "));
+
             var month = date.getMonth() + 1 < 10 ? "0" + (date.getMonth() + 1) : date.getMonth() + 1;
             var currentDate = date.getDate() < 10 ? "0" + date.getDate() : date.getDate();
             var hours = date.getHours() < 10 ? "0" + date.getHours() : date.getHours();
@@ -68,4 +78,3 @@ $(document).ready(function() {
             return date.getFullYear() + "-" + month + "-" + currentDate + " " + hours + ":" + minutes + ":" + seconds;
         }
     }
-})
