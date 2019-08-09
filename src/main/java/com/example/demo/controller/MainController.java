@@ -10,28 +10,23 @@ import org.springframework.web.bind.annotation.RequestMethod;
 public class MainController {
 
     @RequestMapping(value = "/insertUserInfo", method = RequestMethod.GET)
-    public String test3(){
-
+    public String insertUserInfo(){
         return "/user/insertUserInfo";
     }
     @RequestMapping(value = "/userList", method = RequestMethod.GET)
-    public String test4(){
-
+    public String getUserList(){
         return "/user/userList";
     }
     @RequestMapping(value = "/insertTask", method = RequestMethod.GET)
-    public String test5(){
-
+    public String insertTask(){
         return "/task/insertTask";
     }
     @RequestMapping(value = "/taskList", method = RequestMethod.GET)
-    public String test6(){
-
+    public String getTaskList(){
         return "/task/taskList";
     }
     @RequestMapping(value = "/index", method = RequestMethod.GET)
-    public String test7(){
-
+    public String index(){
         return "index";
     }
 

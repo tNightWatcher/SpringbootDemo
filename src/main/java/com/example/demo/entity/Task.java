@@ -158,5 +158,20 @@ public class Task implements Serializable {
         this.accomplishment = accomplishment;
     }
 
-
+    @Override
+    public String toString() {
+        return "Task{" +
+                "id='" + id + '\'' +
+                ", taskName='" + taskName + '\'' +
+                ", publisher='" + publisher + '\'' +
+                ", principle='" + principle + '\'' +
+                ", publishTime=" + publishTime +
+                ", expectedTime=" + expectedTime +
+                ", taskOverview='" + taskOverview + '\'' +
+                ", taskDetail='" + taskDetail + '\'' +
+                ", premise='" + premise + '\'' +
+                ", schedule='" + schedule + '\'' +
+                ", accomplishment='" + accomplishment + '\'' +
+                '}';
+    }
 }

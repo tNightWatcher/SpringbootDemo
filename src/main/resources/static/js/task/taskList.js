@@ -59,7 +59,26 @@ $(document).ready(function() {
                     field:"accomplishment",
                     title:"是否完成"
                 }
-            ]
+            ],
+            onClickRow:function(row,$element,field){
+                $.ajax({
+                    type: "POST",
+                    url: "/taskController/taskShow",
+                    dataType: "json",
+                    data:JSON.stringify(row),
+                    contentType : "application/json",
+                    success: function (data) {
+                        alert("数据提交成功");
+                        console.log("success");
+                        console.log(data);
+                    },
+                    error: function (e) {
+                        console.log(e)
+                    }
+                })
+                window.location.href="/taskController/taskShow";
+            }
+
         })
     }
 
